@@ -1,0 +1,57 @@
+e2e -- end to end testing
+nodemodules-- packages of node
+src--  code folder
+
+commands
+--------
+
+npm install -g @angular/cli
+ng new my-dream-app
+cd my-dream-app
+ng serve
+
+what is Angular?
+----------------
+Angular is a deveopment platform for building a single 
+page applications for mobile and desktop
+1. It uses typescript & HTML to build applications 
+2. Angular is written using typescript
+3. It comes with features like component, directives, forms,
+pipes, servuces, Dependency Inject(DI)
+
+Angular versions
+------------------
+Early version on angular was named as Angular2, later It
+was renamed to Angular
+
+Angular team releases new versions of the Angular regarly (approx for every 6 months)
+
+latest stable version is 11.1.1
+
+angular is developed and mainatined by google. IT has large community
+using which we can find help over the internet easily/
+
+features of angular
+------------------
+1. two-way binding -- Data binding is fast and automatic
+                   -- changes made to the view is automatically updated 
+                    in the component class and vice versa
+
+2. powerful routing support -- 
+
+3. Expressive HTML -- we can use programming constructs like, if conditions 
+                    for loops etc.. to render and control HTML pages.
+
+4. Modular by design -- Angular follows modular design. we can create
+                    modules better organised and manage our codebase.
+
+Angular cli
+---------------
+Angular CLI is a command line interface tool that was to initilaze, develop
+scaffold and maintain Angular applications directly from a command shell.
+
+1. install node.js 
+2. npm install -g @angular-cli@latest (g -- global and latest can be replaced with version)
+3. ng new angular-app (create a new folder)
+4. cd angular-app
+5. ng serve or npm start
