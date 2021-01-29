@@ -55,3 +55,173 @@ scaffold and maintain Angular applications directly from a command shell.
 3. ng new angular-app (create a new folder)
 4. cd angular-app
 5. ng serve or npm start
+bootstrap
+===========
+install npm bootstrap and import it globally via locating it.. 
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+or add the below tags in index.html
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+bootstrap in app.module.ts is different.. 
+  bootstrap: [AppComponent]
+
+  
+3 things in app.ts 
+-------------------
+1. imports for library
+2. class 
+3. decorator - components -- decorated with @
+
+
+export keyword makes your class available outside the class
+componet will have metadata
+
+selector -- where to display the template(linked to html)
+templateurl -- html related to It (index.html replaces with template url html)
+styleurls -- it is for css , it can have array of class
+{{}} -- double curly braces -- single databinding -- no changes can be made
+interpolation 
+
+databinding -- change data dynamically, as per user response
+1. one way databinding
+2. two way databinding
+
+one way databinding -- data flow from one way either from component to html or viceversa
+two way databinding -- data flow both sides
+
+{{title}} -- title is called string literal
+title is called template expression
+
+[()] --ng model -- two way data binding
+
+include bootstrap -- 
+
+include it in html-- by adding css and js from bootstrap.com\\
+
+or install bootstap and in cssfile
+
+
+angular modules
+--------------
+app.module.ts -- every application should have one module
+module loads first called root module
+it has imports, export and decoratons
+
+declarations -- list of components -- we create
+imports -- meta data, list of other modules used by this app module
+routing -- next page application
+providers-- service
+bootstrap - array, whatever components listed willhave bootstrap
+fav icon -- browser icon at table levels
+app routing -- define routes
+
+main.ts -- bootstrap the apmodule 
+
+
+assests -- to keep images
+
+.gitkeep -- to put empty checkin of folder
+
+polyfll.ts -- any browser compatability issues can be addressed
+
+sstyles.css -- global sstyles
+
+test.ts -- entry point for unit testing
+
+component selector
+--------------------
+1. selector can be directly used by typing element name or
+by attribute sleector or by class selector
+
+selector : 'app-root' <app-root></app-root>
+
+selector: '[app-root]'  <div app-root></div>
+
+selector: '[app="app-root"]'   <div app="app-root"></div>
+
+selector: '.app-root'      <div class="app-root"></div>
+
+template url
+-------------
+helps to write html, defines view
+
+template and templateURL
+---------------------------
+Template - internal HTML
+templateURL - external HTML file
+ template : `
+    <div class="container">
+    <h1>This is inline style</h1>
+    <h1> {{fullName}} </h1>
+    </div>
+  `,
+  // styleUrls: ['./app.component.css']
+  styles :[`
+      h1{
+        color: red
+      }
+
+`]
+style & styleurls
+---------------------
+styles -- internal class
+style url :External css file
+
+databinding
+------------
+Data binding keeps both component and view in sync with each other
+
+One-way binding
+-----------------
+
+interpolation -- {{ }} -- double curly braces - create a property and pass property or pass it directly
+                    content inside the double curly braces is called template expression"
+
+writing static text inside double curly braces
+{{'hello world'}} -- single quote
+{{"hellow world"}} -- double quote
+
+property binding -- 
+ firstName = 'Suji';
+  lastName = 'Duvvuri';
+  fullName = 'tim cook'
+    {{firstName}} {{lastName}}
+
+two way binding
+----------------
+we can edit and send back the value
+ firstName = 'Suji'; 
+     <input type="text" [(ngModel)]="fullName" class="form-control"><br>
+
+event binding -- 
+    <button (click) ="getName()" class='btn btn-primary'>Get full name</button>
+getName(){
+  console.log(this.fullName)
+  this.fullName = 'Srujana'
+  console.log(this.fullName)
+}
+
+Angular directives
+-------------------
+
+Angular directives helps us to manipulate the deveopment
+we can change the appearance, behaviour or layout of a DOM element using directives
+They help us to extend the HTML
+
+structural Directives               Attribute Directives
+---------------------               --------------------------------
+*ngFor                                ngModel
+*ngSwitch                             ngClass
+*ngIF                                 ngStyle
+
+
+*ngFor -- It iterates over a collection of data to fetch the data
+  Angular ngFor directive iterates over a collection of data. 
+  like an array, list etc., and create HTML element for each of the items
+  from a HTML template
+
+
+
