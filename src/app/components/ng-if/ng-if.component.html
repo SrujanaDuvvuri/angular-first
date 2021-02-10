@@ -1,0 +1,29 @@
+<div class="container">
+<h1>NgIf Directive</h1>
+<input type="checkbox" [(ngModel)]="show">
+<div *ngIf="show">Display the content</div>
+<br>
+<p [hidden]="!show">
+    Display content of P
+</p>
+<br>
+<p hidden>this is data content</p>
+</div>
+
+<div *ngIf="show; else display">
+    Lorem ipsum dolor sit amet 
+</div>
+
+<ng-template #display>
+    Learn oneway to build angular
+</ng-template>
+<br>
+<div *ngIf="show; then thenBlock else display">
+    This is Div
+</div>
+<ng-template #thenBlock>
+    The Angular CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications directly from a command shell.
+</ng-template>
+<ng-template #elseBlock>
+    Major versions of Angular CLI follow the supported major version of Angular, but minor versions can be released separately.
+</ng-template>

@@ -4,7 +4,7 @@ src--  code folder
 
 commands
 --------
-
+install nodejs 
 npm install -g @angular/cli
 ng new my-dream-app
 cd my-dream-app
@@ -17,7 +17,7 @@ page applications for mobile and desktop
 1. It uses typescript & HTML to build applications 
 2. Angular is written using typescript
 3. It comes with features like component, directives, forms,
-pipes, servuces, Dependency Inject(DI)
+pipes, services, Dependency Inject(DI)
 
 Angular versions
 ------------------
@@ -144,6 +144,13 @@ selector: '[app="app-root"]'   <div app="app-root"></div>
 
 selector: '.app-root'      <div class="app-root"></div>
 
+
+commands to create components , directives etc
+--------------------------------------------------
+create component - ng generate component <name> or ng g c <name>
+
+create directive -- ng generate directive <name> or 
+                  ng g d <name>
 template url
 -------------
 helps to write html, defines view
@@ -190,6 +197,15 @@ property binding --
   fullName = 'tim cook'
     {{firstName}} {{lastName}}
 
+       text = 'Welcome to Angular'
+   isDisabled = false;
+   url ="https://cli.angular.io/"
+
+  <h1 [innerText]="text"></h1>
+  <button [disabled]="isDisabled">I am disabled</button><br><br>
+  <a [href]="url" [target]="target" >Angular CLI</a>
+
+
 two way binding
 ----------------
 we can edit and send back the value
@@ -222,6 +238,145 @@ structural Directives               Attribute Directives
   Angular ngFor directive iterates over a collection of data. 
   like an array, list etc., and create HTML element for each of the items
   from a HTML template
+  
+additional properties of NG: 
+  let id=index;
+let first=first; let last=last; let even=even; let odd=odd; let count=count"
+
+  It helps us to build lists of tables to display tabular data in nice way
+
+  the syntax states with *ngFor, the * represents Angular template syntax
+
+  even 
+  odd
+  first
+  last
+  index
+  count
+  
+*ngSwitch
+==========
+
+It is an angular structural directive which allows us to add or remove DOM elements\
+
+it works in conjunction with ngSwitchCase & ngSwitchDefault
+
+<container-element [ngSwitch]="switch_expression">
+<inner_element *ngSwitchCase="expression"></inner_element>
+<inner_element *ngSwitchCase="expression"></inner_element>
+<inner_element *ngSwitchCase="expression"></inner_element>
+<inner_element *ngSwitchCaseDefault"></inner_element>
+</container-element>
+
+[ngSwitch]
+----------
+It is bound to container element like div
+We assign switch expression via property binding
+
+ngSwitchCase
+--------------
+This is bound to inner element whichever must place inside container element
+we use *(asterik), becuase it is structural directives
+
+
+ngSwitchDefault
+---------------
+It is bound to inner element , which we must place inside the container
+
+
+*ngIF
+--------
+Allows us to add or remove DOM element based on some conditions
+we can add this to any element like div, p, h1 etc.,\\
+It must be prefixed with *
+
+ngIf vs hidden
+=============
+ngIf removes element from dom , hidden just hides from dom
+
+
+ngClass
+--------
+Adds or removes CSS classes on an HTML elements
+
+ngClass with a string
+---------------------
+we can use the string as expression and bind it directly to ngClass attribute
+we can add multiple classes with space between each class
+
+ngClass with an Array
+----------------------
+we can achieve the same result by using an array instead of string
+
+ngClass with an Object
+----------------------
+we can achieve the same result by using an object instead of array
+
+ngStyle
+----------
+allows us to set the inline style of a HTMLelement using expressoon
+
+custom Directives
+-------
+element ref: is a service that grants direct access
+to the DOM element through its native element property
+
+Angular pipes
+
+-----------------
+
+The angular pipes are used to transform the data
+
+We can pass arguments to pipe and chain pipes
+These rguments can be added to the pipe using a colon(:) and followed by value of argument
+the angular allows us to create custom pipes 
+
+Angular pipes takes data as input and formats or transform the data to display in the template
+
+Inbuilt pipes : currency pipe, date pipe, number pipe, percent pipe, decimal pipe, slice pipe et.,
+
+date pipes:
+https://angular.io/api/common/DatePipe
+
+Child to parent
+------------------
+There are three ways in which parent can interact with child component.
+
+1. Parent listeners to child event
+2. Parent uses local variables to access the child
+3. Parent uses @ViewChild to get reference to the child componenet
+
+
+Parent listeners to child event
+------------------------------------
+
+1. The child component exposes an eventEmitter property 
+2. This property is decorated with @Output decorator
+3. when the child component needs to communicate with parent it raises the event
+4. The parent component listens to the event and reacts to it 
+
+eventEmitter
+-----------
+1. to raise an event the component must declare an eventEmitter property
+2. The event can be emitted by calling emit() method
+
+output decorator
+------------------
+To make the event accessible from parent components we must decoraate
+the property with @Output decorator
+
+
+Parent uses local variable to access the child
+-------------------------------------------------
+
+
+
+Angular lifecycle hooks
+---------------------------
+The lifecycle hooks are the methods that angular invokes on the diretives and
+components as it creates, changes and destroys them.
+
+
 
 
 

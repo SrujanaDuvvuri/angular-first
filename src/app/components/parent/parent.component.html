@@ -1,0 +1,11 @@
+<p>parent works!</p>
+
+<div class="container">
+
+    <h1>{{title}}</h1>
+    <button (click)="increment()" class="btn btn-primary">Increment </button> <br>
+    <button (click)="decrement()" class="btn btn-primary">Decrement</button>
+    <app-child [count]="counter" [message]="message"></app-child>
+    
+    <p>counter is {{counter}} and message is {{message}}</p>
+</div>

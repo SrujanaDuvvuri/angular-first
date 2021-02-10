@@ -1,0 +1,34 @@
+<div class="container">
+
+    <h1>ngClass Directive</h1>
+    <div [ngClass]="'red size20'">
+This is in red with size 20 px
+    </div>
+
+    <br>
+    <div [ngClass]="['red', 'size20']">
+        This is in red with size 20 px
+            </div>
+</div>
+
+<br>
+<div [ngClass]="{'red':true, 'size20':true}">
+    This is from JSON formats
+</div>
+<h1>Dynamic classes</h1>
+<br>
+<div [ngClass]="cssString">
+    This is from ts file
+</div>
+
+<br>
+<div [ngClass]="cssArray">
+    This is from ts file from Array
+</div>
+
+<br>
+<div [ngClass]="cssObject">
+    This is from ts file from Array
+</div>
+
+

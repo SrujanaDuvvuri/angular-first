@@ -1,0 +1,25 @@
+<p>employee works!</p>
+<div class="container">
+<h1>Employee List</h1>
+<ul *ngFor="let emp of employeeList; let id=index;
+let first=first; let last=last; let even=even; let odd=odd; let count=count">
+<li>{{first}}</li>
+<li>{{last}}</li>
+<li>{{even}}</li>
+<li>{{odd}}</li>
+    <li>{{id+1}}</li>
+    <li>{{count}}</li>
+<li>{{emp.name}} </li>
+<li>{{emp.email}} </li>
+<li>
+
+    <ul *ngFor="let sk of emp.skills">
+        <li>{{sk.skill}}</li>
+        <li>{{sk.exp}}</li>
+    </ul>
+</li>
+
+</ul>
+
+
+</div>

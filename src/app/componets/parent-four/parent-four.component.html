@@ -1,0 +1,17 @@
+<p>parent-four works!</p>
+<div class="container">
+    <h1>Angular Lifecycle hook: OnChanes</h1>
+    <p>
+        Message : <input type="text" [(ngModel)]="message" class='form-control'>
+    </p>
+    <p>
+        Name : <input type="text" [(ngModel)]="name" class='form-control'>
+    </p>
+    <p>
+        Code : <input type="text" [(ngModel)]="code" class='form-control'>
+    </p>
+    <p>
+        <button (click)="updateCustomer()" class='btn btn-primary'>Update</button>
+    </p>
+    <app-child-four [message]="message" [customer]="customer"></app-child-four>
+</div>
